@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Amul & Adhiiiii</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="gallery-page">
+  <script> if (!sessionStorage.getItem('isLoggedIn')) { window.location.href = 'index.html'; } </script>
+
+  <div class="gallery">
+    <img src="assets/photo1.jpg" alt="My Amul" onclick="openLetter('main')"/>
+    <video autoplay loop muted playsinline onclick="openLetter('letter1')"><source src="assets/video1.mp4" type="video/mp4"></video>
+    <video autoplay loop muted playsinline onclick="openLetter('letter2')"><source src="assets/video2.mp4" type="video/mp4"></video>
+    <video autoplay loop muted playsinline onclick="openLetter('letter3')"><source src="assets/video3.mp4" type="video/mp4"></video>
+    <video autoplay loop muted playsinline onclick="openLetter('letter4')"><source src="assets/video4.mp4" type="video/mp4"></video>
+    <video autoplay loop muted playsinline onclick="openLetter('letter5')"><source src="assets/video5.mp4" type="video/mp4"></video>
+  </div>
+
+  <div id="letterPopup" class="popup">
+    <div class="popup-content">
+      <div class="bg-blur"></div>
+      <div class="letter-text">
+        <div id="letterBody" class="letter-body"></div>
+
+        <div id="replySection" class="reply-section">
+          <label for="replyBox" class="reply-label">Your reply (max 1000 characters)</label>
+          <textarea id="replyBox" maxlength="1000" rows="6" placeholder="Type here..."></textarea>
+          <div class="reply-row">
+            <span id="charCount">0 / 1000</span>
+            <button class="btn" id="replySubmit">Submit</button>
+          </div>
+          <p class="reply-note">Once submitted, the reply is locked and visible to both.</p>
+        </div>
+
+        <div id="savedReply" class="saved-response"></div>
+      </div>
+      <span class="close" onclick="closeLetter()">&times;</span>
+    </div>
+  </div>
+
+  <div id="hearts"></div>
+  <footer>Made with 💖 by Your Adhiiiii for My Amul</footer>
+
+  <script src="script.js"></script>
+  <script type="module" src="firebase.js"></script>
+</body>
+</html>

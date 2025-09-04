@@ -1,0 +1,50 @@
+*{box-sizing:border-box}
+body{
+  margin:0; padding:0; min-height:100vh;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:linear-gradient(135deg,#ffd6e8,#fff0f5,#ffe5d9);
+  color:#4a2c2a; text-align:center;
+}
+h1,h2{font-weight:800; letter-spacing:.5px}
+.card{background:#fff; border-radius:24px; box-shadow:0 15px 45px rgba(0,0,0,.15)}
+.login-box{max-width:380px; margin:80px auto; padding:30px}
+.login-box input{width:100%; padding:12px 14px; margin:10px 0; border-radius:14px; border:1px solid #ffd0dc; outline:none}
+.btn{background:#ff85a2; color:#fff; border:none; padding:12px 28px; border-radius:999px; cursor:pointer; box-shadow:0 8px 20px rgba(255,133,162,.35); transition:transform .2s, box-shadow .2s}
+.btn:hover{transform:translateY(-1px); box-shadow:0 12px 28px rgba(255,133,162,.45)}
+.btn-outline{background:#fff; color:#ff5c8a; border:2px solid #ff85a2}
+.error{color:#ff4b7d; min-height:22px}
+
+.title{margin:20px 0 10px}
+.hero-video{width:min(900px,90%); margin:20px auto 10px; border-radius:24px; box-shadow:0 12px 30px rgba(0,0,0,.25); display:block}
+.actions{margin:20px 0 40px}
+
+/* Hearts */
+#hearts{pointer-events:none; position:fixed; inset:0; overflow:hidden; z-index:1}
+.heart{position:absolute; width:18px; height:18px; background:pink; opacity:.85; transform:rotate(45deg); animation:float 8s linear infinite}
+.heart::before,.heart::after{content:''; position:absolute; width:18px; height:18px; background:pink; border-radius:50%}
+.heart::before{top:-9px; left:0} .heart::after{left:-9px; top:0}
+@keyframes float{0%{transform:translateY(100vh) rotate(45deg)}100%{transform:translateY(-10vh) rotate(45deg); opacity:0}}
+
+/* Gallery */
+.gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; padding:24px; max-width:1200px; margin:0 auto 30px; position:relative; z-index:2}
+.gallery img,.gallery video{width:100%; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,.2); cursor:pointer; transition:transform .25s}
+.gallery img:hover,.gallery video:hover{transform:scale(1.02)}
+
+/* Popup */
+.popup{display:none; position:fixed; inset:0; background:rgba(0,0,0,.55); padding:20px; z-index:10}
+.popup-content{position:relative; max-width:900px; max-height:80vh; margin:40px auto; padding:28px 22px; border-radius:22px; overflow-y:auto; overflow-x:hidden; background:rgba(255,255,255,.9); box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.bg-blur{position:absolute; inset:0; background-image:url('assets/photo1.jpg'); background-size:cover; background-position:center; filter:blur(8px) brightness(1.05); opacity:.35}
+.letter-text{position:relative; z-index:2; text-align:left; padding:10px 18px; line-height:1.7}
+.letter-body{white-space:pre-wrap; margin-bottom:12px}
+.close{position:absolute; right:16px; top:10px; font-size:36px; color:#fff; cursor:pointer; z-index:3}
+
+/* Reply UI */
+.reply-section{margin-top:12px}
+.reply-label{display:block; margin-bottom:6px; color:#b15673}
+#replyBox{width:100%; border-radius:12px; border:1px solid #ffc3d2; padding:10px; font-size:15px}
+.reply-row{display:flex; justify-content:space-between; align-items:center; margin-top:8px}
+#charCount{color:#8a6071; font-size:12px}
+.reply-note{color:#8a6071; font-size:12px}
+.saved-response{margin-top:14px; font-style:italic; color:#ff4081; white-space:pre-wrap}
+
+footer{margin:24px 0 16px; color:#9a6676; position:relative; z-index:2}
